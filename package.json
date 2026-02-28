@@ -1,0 +1,16 @@
+{
+  "name": "homez2.0",
+  "version": "1.0.0",
+  "description": "Мой проект на HTML, CSS, JS",
+  "homepage": "https://DmitriyVERST.github.io/homez2.0",
+  "scripts": {
+    "build": "parcel build public/index.html --public-url ./",
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "cssnano": "^7.1.2",
+    "gh-pages": "^6.3.0",
+    "parcel": "^2.16.4",
+    "postcss": "^8.5.6"
+  }
+}

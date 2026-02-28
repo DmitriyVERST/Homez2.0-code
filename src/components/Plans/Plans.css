@@ -1,0 +1,146 @@
+@import '../../../public/index.css';
+
+.plans {
+  padding: 0 0 110px;
+}
+
+.plans__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plans__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.plans__title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 120%;
+  color: #181a20;
+}
+
+.plans__subtitle {
+  margin-top: 8px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 190%;
+  color: #717171;
+}
+
+.plans__grid {
+  display: flex;
+  gap: 30px;
+}
+
+.plan-card {
+  flex: 1;
+  border-radius: 16px;
+  padding: 32px 30px 30px;
+  background-color: var(--grey-scale-white);
+  box-shadow: 0 1px 4px rgba(24, 26, 32, 0.06);
+}
+
+.plan-card--featured {
+  background-color: #fff4f0;
+}
+
+.plan-card__name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #181a20;
+  margin-bottom: 10px;
+}
+
+.plan-card__price {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 130%;
+  color: #181a20;
+  margin-bottom: 14px;
+}
+
+.plan-card__price--free {
+  color: #eb6753;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.plan-card__desc {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 180%;
+  color: #717171;
+  margin-bottom: 18px;
+}
+
+.plan-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.plan-card__list li {
+  position: relative;
+  padding-left: 24px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 180%;
+  color: #181a20;
+}
+
+.plan-card__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #181a20;
+}
+
+.plan-card__button {
+  width: 100%;
+  border-radius: 999px;
+  height: 46px;
+  border: 1px solid #eb6753;
+  background-color: transparent;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  color: #eb6753;
+  cursor: pointer;
+}
+
+.plan-card__button--primary {
+  background-color: #eb6753;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .plans__grid {
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .plans {
+    padding-bottom: 60px;
+  }
+
+  .plans__title {
+    font-size: 24px;
+  }
+}
+

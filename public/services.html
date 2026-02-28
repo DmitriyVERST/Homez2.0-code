@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги — Homez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward_ios" />
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="../src/styles/Sys.css">
+  <link rel="stylesheet" href="../src/components/Modal/Modal.css">
+  <link rel="stylesheet" href="../src/components/Services/Services.css">
+  <link rel="stylesheet" href="../src/styles/_reset.css">
+</head>
+
+<body>
+  <header class="header categories-header">
+    <div class="header-content">
+      <img src="../src/assets/icons/logo.svg" alt="Логотип (homez)" class="logo">
+
+      <ul class="header-link_slk">
+        <li><a class="header-link" href="./index.html">Главная</a></li>
+        <li><a class="header-link" href="./categories.html">Категории</a></li>
+      </ul>
+
+      <div class="header-info">
+        <div class="reg">Вход /
+          Регистрация</div>
+      </div>    
+    </div>
+  </header>
+  <p class="slk-str container">
+    <a href="index.html">Главная</a>
+    <span class="material-symbols-outlined">
+    arrow_forward_ios
+</span>
+Услуги
+</p>
+
+  <main>
+    <section class="services-hero container" data-aos="fade-up">
+      <h1 class="services-hero__title">Услуги</h1>
+      <p class="services-hero__subtitle">Выберите категорию и добавьте понравившиеся предложения в избранное</p>
+    </section>
+
+    <section class="services-section container" data-aos="fade-up">
+      <div class="services-section__head">
+        <div class="services-section__head-text">
+          <h2 class="services-section__title">Повара</h2>
+          <p class="services-section__subtitle">Персональные повара и кейтеринг для мероприятий</p>
+        </div>
+        <div class="services-section__nav">
+          <button type="button" class="services-section__arrow services-section__arrow--prev" aria-label="Предыдущий слайд"></button>
+          <button type="button" class="services-section__arrow services-section__arrow--next" aria-label="Следующий слайд"></button>
+        </div>
+      </div>
+      <div class="swiper servicesSwiper servicesSwiper--chefs">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Шеф на дом" data-desc="Полноценное меню и сервировка у вас дома.">
+              <div class="service-card__image service-card__image--1"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Шеф на дом</h3>
+                <p class="service-card__desc">Полноценное меню и сервировка у вас дома.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card service-card--popular" data-title="Кейтеринг" data-desc="Организация банкетов и фуршетов под ключ.">
+              <div class="service-card__image service-card__image--2"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Кейтеринг</h3>
+                <p class="service-card__desc">Организация банкетов и фуршетов под ключ.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Кулинарный мастер-класс" data-desc="Обучение готовке с шеф-поваром.">
+              <div class="service-card__image service-card__image--3"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Кулинарный мастер-класс</h3>
+                <p class="service-card__desc">Обучение готовке с шеф-поваром.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Детское меню" data-desc="Здоровое питание и оформление блюд для детей.">
+              <div class="service-card__image service-card__image--4"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Детское меню</h3>
+                <p class="service-card__desc">Здоровое питание и оформление блюд для детей.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Банкет под ключ" data-desc="Организация праздничного стола и обслуживание.">
+              <div class="service-card__image service-card__image--5"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Банкет под ключ</h3>
+                <p class="service-card__desc">Организация праздничного стола и обслуживание.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card service-card--popular" data-title="Дегустация меню" data-desc="Подбор блюд и напитков под ваш вкус.">
+              <div class="service-card__image service-card__image--6"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Дегустация меню</h3>
+                <p class="service-card__desc">Подбор блюд и напитков под ваш вкус.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Здоровое питание" data-desc="Сбалансированное меню на неделю.">
+              <div class="service-card__image service-card__image--7"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Здоровое питание</h3>
+                <p class="service-card__desc">Сбалансированное меню на неделю.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Фуршет" data-desc="Легкие закуски и напитки для приема гостей.">
+              <div class="service-card__image service-card__image--8"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Фуршет</h3>
+                <p class="service-card__desc">Легкие закуски и напитки для приема гостей.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section class="services-section container" data-aos="fade-up">
+      <div class="services-section__head">
+        <div class="services-section__head-text">
+          <h2 class="services-section__title">Тренировка</h2>
+          <p class="services-section__subtitle">Персональные тренировки и программы занятий</p>
+        </div>
+        <div class="services-section__nav">
+          <button type="button" class="services-section__arrow services-section__arrow--prev" aria-label="Предыдущий слайд"></button>
+          <button type="button" class="services-section__arrow services-section__arrow--next" aria-label="Следующий слайд"></button>
+        </div>
+      </div>
+      <div class="swiper servicesSwiper servicesSwiper--training">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <article class="service-card service-card--popular" data-title="Персональный тренер" data-desc="Индивидуальные занятия в зале или дома.">
+              <div class="service-card__image service-card__image--2-1"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Персональный тренер</h3>
+                <p class="service-card__desc">Индивидуальные занятия в зале или дома.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Йога и стретчинг" data-desc="Групповые и персональные сессии.">
+              <div class="service-card__image service-card__image--2-2"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Йога и стретчинг</h3>
+                <p class="service-card__desc">Групповые и персональные сессии.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Функциональный тренинг" data-desc="Силовые и кардио программы.">
+              <div class="service-card__image service-card__image--2-3"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Функциональный тренинг</h3>
+                <p class="service-card__desc">Силовые и кардио программы.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card service-card--popular" data-title="Групповые занятия" data-desc="Аэробика, пилатес и другие направления.">
+              <div class="service-card__image service-card__image--2-4"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Тренировка всего тела</h3>
+                <p class="service-card__desc">Проработка всех частей тела</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Групповые занятия" data-desc="Аэробика, пилатес и другие направления.">
+              <div class="service-card__image service-card__image--2-5"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Тренировка с Ана Понцо - Городской парк</h3>
+                <p class="service-card__desc">Йога для всех возратсов, на свежем воздухе</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Групповые занятия" data-desc="Аэробика, пилатес и другие направления.">
+              <div class="service-card__image service-card__image--2-6"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Тренировка с Ана Понцо - Городской парк</h3>
+                <p class="service-card__desc">Йога для всех возратсов, на свежем воздухе</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section class="services-section container" data-aos="fade-up">
+      <div class="services-section__head">
+        <div class="services-section__head-text">
+          <h2 class="services-section__title">Массаж</h2>
+          <p class="services-section__subtitle">Расслабляющий и лечебный массаж на дому и в студии</p>
+        </div>
+        <div class="services-section__nav">
+          <button type="button" class="services-section__arrow services-section__arrow--prev" aria-label="Предыдущий слайд"></button>
+          <button type="button" class="services-section__arrow services-section__arrow--next" aria-label="Следующий слайд"></button>
+        </div>
+      </div>
+      <div class="swiper servicesSwiper servicesSwiper--massage">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <article class="service-card service-card--popular" data-title="Классический массаж" data-desc="Общий расслабляющий массаж всего тела для снятия мышечного напряжения.">
+              <div class="service-card__image service-card__image--3-1"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Классический массаж</h3>
+                <p class="service-card__desc">Общий расслабляющий массаж всего тела для снятия мышечного напряжения.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Спортивный массаж" data-desc="Восстановление мышц после тренировок, профилактика травм.">
+              <div class="service-card__image service-card__image--3-2"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Спортивный массаж</h3>
+                <p class="service-card__desc">Восстановление мышц после тренировок, профилактика травм.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card service-card--popular" data-title="Расслабляющий массаж" data-desc="Снятие стресса, улучшение сна и общего тонуса.">
+              <div class="service-card__image service-card__image--3-3"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Расслабляющий массаж</h3>
+                <p class="service-card__desc">Снятие стресса, улучшение сна и общего тонуса.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Массаж на дому" data-desc="Выезд мастера в удобное время с полным набором средств.">
+              <div class="service-card__image service-card__image--3-4"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Массаж на дому</h3>
+                <p class="service-card__desc">Выезд мастера в удобное время с полным набором средств.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Глубокий тканевый массаж" data-desc="Проработка глубоких слоёв мышц и фасций.">
+              <div class="service-card__image service-card__image--3-5"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Глубокий тканевый массаж</h3>
+                <p class="service-card__desc">Проработка глубоких слоёв мышц и фасций.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="service-card" data-title="Глубокий тканевый массаж" data-desc="Проработка глубоких слоёв мышц и фасций.">
+              <div class="service-card__image service-card__image--3-6"></div>
+              <div class="service-card__body">
+                <h3 class="service-card__title">Восстановление и отдых</h3>
+                <p class="service-card__desc">Проработка глубоких слоёв мышц и фасций.</p>
+              </div>
+              <button type="button" class="service-card__heart" aria-label="В избранное">
+                <img src="../src/assets/icons/heart.svg" alt="" class="service-card__heart-icon">
+              </button>
+            </article>
+          
+          
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="serviceModal" class="modal" aria-hidden="true" role="dialog" aria-modal="false">
+    <div class="modal__backdrop"></div>
+    <div class="modal__box">
+      <button type="button" class="modal__close" aria-label="Закрыть">
+        <span class="modal__close-icon" aria-hidden="true"></span>
+      </button>
+      <div class="modal__content">
+        <h3 class="modal__title" id="modalTitle">Услуга добавлена в избранное</h3>
+        <p class="modal__desc" id="modalDesc">Вы можете просмотреть избранные услуги в личном кабинете.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__info">
+                <h2 class="footer__title">Нужна консультация по недвижимости?</h2>
+                <p class="footer__subtitle">
+                    Оставьте заявку, и мы подберём для вас актуальные объекты и свяжемся в удобное время.
+                </p>
+
+                <form id="footerForm" class="footer-form" novalidate>
+                    <div class="form__group">
+                        <label for="footerName">Ваше имя</label>
+                        <input id="footerName" name="footerName" type="text" placeholder="Иван Иванов" required>
+                        <span class="form__error"></span>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="footerEmail">Электронная почта</label>
+                        <input id="footerEmail" name="footerEmail" type="email" placeholder="example@gmail.com" required>
+                        <span class="form__error"></span>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="footerMessage">Комментарий</label>
+                        <textarea id="footerMessage" name="footerMessage" placeholder="Кратко опишите задачу" required></textarea>
+                        <span class="form__error"></span>
+                    </div>
+
+                    <button type="submit" class="form__submit footer-form__submit">Отправить заявку</button>
+                    <p class="footer-form__status" id="footerFormStatus" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="footer__map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3847.0777114336847!2d47.20806843895211!3d56.15077936390878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1770750457105!5m2!1sru!2sru"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Карта"></iframe>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container footer__bottom-inner">
+                <p>© 2026 Homez. Все права защищены.</p>
+                <div class="footer__bottom-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../src/components/Services/ServicesSlider.js"></script>
+  <script src="../src/components/Modal/Modal.js"></script>
+  <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+
+</html>

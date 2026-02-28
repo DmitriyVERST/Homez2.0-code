@@ -1,0 +1,148 @@
+@import '../../../public/index.css';
+
+.otzyv {
+  padding: 90px 0 110px;
+  /* background-color: #fff5f1; */
+}
+
+.otzyv__inner {
+  max-width: 1200px;
+  margin: 120px auto 120px auto;
+  padding: 0 30px;
+}
+
+.otzyv__header {
+  margin-bottom: 40px;
+}
+
+.otzyv__title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 120%;
+  color: #181a20;
+}
+
+.otzyv__subtitle {
+  margin-top: 8px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 190%;
+  color: #717171;
+}
+
+.reviewsSwiper {
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.otzyv .swiper-slide {
+  width: 370px;
+  height: auto;
+  box-shadow: 0 1px 4px 0 rgba(24, 26, 32, 0.07);
+  border-radius: 12px;
+  background-color: var(--grey-scale-white);
+  padding: 28px 30px 26px;
+}
+
+.review-card__title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #181a20;
+  margin-bottom: 12px;
+}
+
+.review-card__text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 180%;
+  color: #717171;
+  margin-bottom: 18px;
+}
+
+.review-card__rating {
+  font-size: 14px;
+  color: #f6b100;
+  margin-bottom: 18px;
+}
+
+.review-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.review-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.review-card__avatar--1 {
+  background-image: url('../../assets/images/city1.jpg');
+}
+
+.review-card__avatar--2 {
+  background-image: url('../../assets/images/city3.jpg');
+}
+
+.review-card__avatar--3 {
+  background-image: url('../../assets/images/city4.jpg');
+}
+
+.review-card__avatar--4 {
+  background-image: url('../../assets/images/h7-t3.jpg');
+}
+
+.review-card__name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 150%;
+  color: #181a20;
+}
+
+.review-card__role {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #717171;
+}
+
+.reviews-pagination .swiper-pagination-bullet-active {
+  background-color: #eb6753;
+}
+
+@media (max-width: 768px) {
+  .otzyv__inner {
+    margin: 60px auto;
+  }
+
+  .otzyv__title {
+    font-size: 24px;
+  }
+
+  .otzyv .swiper-slide {
+    width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .otzyv {
+    padding: 60px 0 80px;
+  }
+
+  .otzyv .swiper-slide {
+    width: 260px;
+  }
+}
+

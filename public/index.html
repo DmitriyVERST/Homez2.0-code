@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=map_pin_review" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homez — каталог аренды недвижимости</title>
+
+    <!-- Наши css файлы -->
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="../src/styles/Sys.css">
+    <link rel="stylesheet" href="../src/components/Form/Form.css">
+    <link rel="stylesheet" href="../src/components/Slider/Slider.css">
+    <link rel="stylesheet" href="../src/components/Reviews/ReviewsSlider.css">
+    <link rel="stylesheet" href="../src/components/Plans/Plans.css">
+    <link rel="stylesheet" href="../src/components/Menu/MenuHero.css">
+    <link rel="stylesheet" href="../src/components/ScrollTop/ScrollTop.css">
+    <link rel="stylesheet" href="../src/components/Footer/Footer.css">
+    <link rel="stylesheet" href="../src/styles/_reset.css">
+    <link rel="stylesheet" href="../src/components/NewsletterFlyout/NewsletterFlyout.css">
+</head>
+
+<body>
+
+    <!-- Подписка на обновления: выезжает слева через несколько секунд -->
+    <aside id="newsletterFlyout" class="newsletter-flyout" aria-label="Подписаться на обновления">
+        <button type="button" class="newsletter-flyout__close" aria-label="Закрыть" title="Закрыть">&times;</button>
+        <div class="newsletter-flyout__inner">
+            <p class="newsletter-flyout__title">Подписаться на обновления</p>
+            <p class="newsletter-flyout__text">Новые объекты и акции — раз в неделю на почту.</p>
+            <form class="newsletter-flyout__form" id="newsletterForm" novalidate>
+                <input type="email" name="email" placeholder="Ваш email" required class="newsletter-flyout__input" aria-label="Email">
+                <button type="submit" class="newsletter-flyout__btn">Подписаться</button>
+            </form>
+            <p class="newsletter-flyout__status" id="newsletterStatus" aria-live="polite"></p>
+        </div>
+    </aside>
+
+    <main>
+
+        <section class="menu" data-aos="fade-down">
+            <header class="header">
+                <div class="header-content">
+                    <img src="../src/assets/icons/logo.svg" alt="Логотип (homez)" class="logo">
+
+                    <ul class="header-link_slk">
+                        <li><a class="header-link active" href="./index.html">Главная</a></li>
+                        <li><a class="header-link" href="./services.html">Услуги</a></li>
+                        <li><a class="header-link" href="./categories.html">Категории</a></li>
+                    </ul>
+
+                    <button class="burger" type="button" aria-label="Меню" aria-expanded="false">
+                        <span class="burger__line"></span>
+                        <span class="burger__line"></span>
+                        <span class="burger__line"></span>
+                    </button>
+
+                    <div class="header-info">
+                        <a class="phone" href="tel:++80881234589"><img class="svg-icon-header" src="../src/assets/icons/phone.svg" alt="">+8(088) 123 45 89</a>
+                        <div class="reg"><img class="svg-icon-header" src="../src/assets/icons/profile.svg"
+                                alt="Профиль">Вход / Регистрация</div>
+                        <button class="btn"><a href="">Добавить объект</a><img class="icon-reg"
+                                src="../src/assets/icons/str.svg" alt="Стрелка"></button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+                <nav class="nav-overlay__panel">
+                    <a class="nav-overlay__link active" href="./index.html">Главная</a>
+                    <a class="nav-overlay__link" href="./services.html">Услуги</a>
+                    <a class="nav-overlay__link" href="./categories.html">Категории</a>
+
+                    <a href="+80881234589" class="nav-overlay__link nav-overlay__link--reg"><img class="svg-icon-header" src="../src/assets/icons/phone.svg" alt="Иконка (Телефона)">+8(088) 123 45 89</a>
+                    <span class="nav-overlay__link nav-overlay__link--reg"><img class="svg-icon-header" src="../src/assets/icons/profile.svg" alt=""> Вход / Регистрация</span>
+                    <a class="nav-overlay__link nav-overlay__link--btn" href="">Добавить объект</a>
+                </nav>
+            </div>
+
+            <div class="menu-hero container">
+                <div class="menu-hero__content">
+                    <h1 class="menu-hero__title">
+                        Найдите место,<br>
+                        где вам будет комфортно жить
+                    </h1>
+                    <p class="menu-hero__subtitle">
+                        Удобный поиск проверенных предложений аренды и продажи недвижимости в нужном городе и районе.
+                    </p>
+
+                    <div class="menu-hero__search">
+                        <div class="hero-tabs" role="tablist" aria-label="Режим поиска">
+                            <button class="hero-tab is-active" type="button" data-hero-tab="all">
+                                Все
+                            </button>
+                            <button class="hero-tab" type="button" data-hero-tab="buy">
+                                Купить
+                            </button>
+                            <button class="hero-tab" type="button" data-hero-tab="rent">
+                                Арендовать
+                            </button>
+                        </div>
+
+                        <div class="hero-search">
+                            <div class="hero-search__input-wrap">
+                                <input
+                                    class="hero-search__input"
+                                    type="text"
+                                    placeholder="Введите город, район или адрес"
+                                    aria-label="Поиск по ключевому слову"
+                                />
+                            </div>
+                            <button class="hero-search__submit" type="button" aria-label="Найти объекты">
+                                Найти
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat__number" data-counter="154">0</span>
+                            <p class="hero-stat__label">профессиональных наград</p>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat__number" data-counter="6000">0</span>
+                            <!-- <span class="hero-stat__suffix">+</span> -->
+                            <p class="hero-stat__label">довольных клиентов</p>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat__number" data-counter="558">0</span>
+                            <!-- <span class="hero-stat__suffix">+</span> -->
+                            <p class="hero-stat__label">готовых к сделке объектов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quired container" data-aos="fade-up">
+            <div class="content-quired">
+                <div class="quired-text">
+                    <p class="text-quired">Aliquam lacinia diam quis lacus euismod</p>
+                    <p class="text-type_quired">See All Types <img class="image-str_quired"
+                            src="../src/assets/icons/link-str.svg" alt=""></p>
+                </div>
+                <div class="quired-cards">
+                    <div class="card">
+                        <img src="../src/assets/icons/type-icon1.svg" alt="Дома">
+                        <h3 class="text-card_quired">Дома</h3>
+                    </div>
+                    <div class="card">
+                        <img src="../src/assets/icons/type-icon2.svg" alt="Квартиры">
+                        <h3 class="text-card_quired">Квартиры</h3>
+                    </div>
+                    <div class="card">
+                        <img src="../src/assets/icons/type-icon3.svg" alt="Офисы">
+                        <h3 class="text-card_quired">Офисы</h3>
+                    </div>
+                    <div class="card">
+                        <img src="../src/assets/icons/type-icon4.svg" alt="Виллы">
+                        <h3 class="text-card_quired">Виллы</h3>
+                    </div>
+                    <div class="card">
+                        <img src="../src/assets/icons/type-icon5.svg" alt="Таунхаусы">
+                        <h3 class="text-card_quired">Таунхаусы</h3>
+                    </div>
+                    <div class="card">
+                        <img src="../src/assets/icons/type-icon6.svg" alt="Бунгало">
+                        <h3 class="text-card_quired">Бунгало</h3>
+                    </div>
+                    <div class="card">
+                        <img src="../src/assets/icons/type-icon7.svg" alt="Лофты">
+                        <h3 class="text-card_quired">Лофты</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-portfolio container" data-aos="fade-up">
+            <div class="content-home">
+                <div class="text-content_home">
+                    <h2 class="title-slide">Избранные предложения</h2>
+                    <p class="podText-slide">Подборка лучших объектов недвижимости</p>
+
+                    <div class="slk-home">
+                        <p class="text-type_quired">Смотреть все объекты <img class="image-str_quired"
+                                src="../src/assets/icons/link-str.svg" alt="Все объекты"></p>
+                    </div>
+                </div>
+
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="image-card" data-price="$4,600" data-status="Featured">
+                                <img class="image-slide" src="../src/assets/images/Link.jpg" alt="Дом в районе Голливуд">
+                            </div>
+
+                            <div class="text-slide">
+                                <h4 class="title-card-clide">Дом в районе Голливуд</h4>
+                                <p class="podText-card-slide">374 Джонсон авеню</p>
+                                <p class="podText-card-slide-bed">6 спален · 2 ванные</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="image-card" data-price="$5,800" data-status="Featured">
+                                <img class="image-slide" src="../src/assets/images/Link (1).jpg" alt="Комфортная вилла Green">
+                            </div>
+
+                            <div class="text-slide">
+                                <h4 class="title-card-clide">Комфортная вилла Green</h4>
+                                <p class="podText-card-slide">178 Бродвей, Бруклин</p>
+                                <p class="podText-card-slide-bed">9 спален · 3 ванные</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="image-card" data-price="$2,500" data-status="Featured">
+                                <img class="image-slide" src="../src/assets/images/Link (2).jpg" alt="Современный дом на продажу">
+                            </div>
+
+                            <div class="text-slide">
+                                <h4 class="title-card-clide">Современный дом на продажу</h4>
+                                <p class="podText-card-slide">873 Бедфорд авеню</p>
+                                <p class="podText-card-slide-bed">10 спален · 2 ванные</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="image-card" data-price="$4,600" data-status="Featured">
+                                <img class="image-slide" src="../src/assets/images/Link.jpg" alt="Дом в районе Голливуд">
+                            </div>
+
+                            <div class="text-slide">
+                                <h4 class="title-card-clide">Дом в районе Голливуд</h4>
+                                <p class="podText-card-slide">374 Джонсон авеню</p>
+                                <p class="podText-card-slide-bed">6 спален · 2 ванные</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="image-card" data-price="$5,800" data-status="Featured">
+                                <img class="image-slide" src="../src/assets/images/Link (1).jpg" alt="Комфортная вилла Green">
+                            </div>
+
+                            <div class="text-slide">
+                                <h4 class="title-card-clide">Комфортная вилла Green</h4>
+                                <p class="podText-card-slide">178 Бродвей, Бруклин</p>
+                                <p class="podText-card-slide-bed">9 спален · 3 ванные</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="image-card" data-price="$2,500" data-status="Featured">
+                                <img class="image-slide" src="../src/assets/images/Link (2).jpg" alt="Современный дом на продажу">
+                            </div>
+
+                            <div class="text-slide">
+                                <h4 class="title-card-clide">Современный дом на продажу</h4>
+                                <p class="podText-card-slide">873 Бедфорд авеню</p>
+                                <p class="podText-card-slide-bed">10 спален · 2 ванные</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="sys-card container" data-aos="fade-up">
+            <div class="sys-card_content">
+                <div class="sys-text">
+                    <h2 class="title-sys">Популярные города</h2>
+                    <p class="podeText-sys">Исследуйте направления, где у нас больше всего актуальных
+                        предложений по аренде и продаже недвижимости.</p>
+
+                    <button class="sys-btn"><a class="sysBtn" href="#">Подробнее</a><img class="image-str_quired"
+                            src="../src/assets/icons/link-str.svg" alt="Стрелка"></button>
+                </div>
+                <div class="sys-cards">
+                    <div class="sys-card">
+                        <div class="sys-image">
+                            <div class="pulse">
+                                <span class="material-symbols-outlined">
+                                    map_pin_review
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="title-card-sys">Нью‑Йорк</h3>
+                        <p class="podTitle-card-sys">10 объектов</p>
+                    </div>
+                    <div class="sys-card">
+                        <div class="sys-image image2">
+                            <div class="pulse">
+                                <span class="material-symbols-outlined">
+                                    map_pin_review
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="title-card-sys">Чикаго</h3>
+                        <p class="podTitle-card-sys">1 объект</p>
+                    </div>
+                    <div class="sys-card">
+                        <div class="sys-image image3">
+                            <div class="pulse">
+                                <span class="material-symbols-outlined">
+                                    map_pin_review
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="title-card-sys">Сан‑Диего</h3>
+                        <p class="podTitle-card-sys">1 объект</p>
+                    </div>
+                    <div class="sys-card">
+                        <div class="sys-image image4">
+                            <div class="pulse">
+                                <span class="material-symbols-outlined">
+                                    map_pin_review
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="title-card-sys">Лос‑Анджелес</h3>
+                        <p class="podTitle-card-sys">1 объект</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" data-aos="fade-up">
+            <section class="inquiry">
+            <div class="inquiry__form-wrapper">
+                <header class="inquiry__header">
+                    <h1>Форма запроса по недвижимости</h1>
+                    <p>Заполните данные, и мы свяжемся с вами</p>
+                </header>
+
+                <form id="inquiryForm" class="form" novalidate>
+                    <div class="form__group">
+                        <label for="inquiryType">Тип запроса</label>
+                        <select id="inquiryType" name="inquiryType" required>
+                            <option value="">— Выберите вариант —</option>
+                            <option value="buy">Купить недвижимость</option>
+                            <option value="rent">Снять недвижимость</option>
+                            <option value="sell">Продать недвижимость</option>
+                        </select>
+                        <span class="form__error"></span>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label for="howToAddress">Как к вам обращаться</label>
+                            <select id="howToAddress" name="howToAddress" required>
+                                <option value="">— Выберите вариант —</option>
+                                <option value="mr">Господин</option>
+                                <option value="ms">Госпожа</option>
+                                <option value="family">Семья</option>
+                            </select>
+                            <span class="form__error"></span>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="fullName">Ваше имя</label>
+                            <input id="fullName" name="fullName" type="text" placeholder="Иван Иванов" required />
+                            <span class="form__error"></span>
+                        </div>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="email">Электронная почта</label>
+                        <input id="email" name="email" type="email" placeholder="example@gmail.com" required />
+                        <span class="form__error"></span>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="role">Ваша роль</label>
+                        <select id="role" name="role" required>
+                            <option value="">— Выберите вариант —</option>
+                            <option value="buyer">Покупатель</option>
+                            <option value="investor">Инвестор</option>
+                            <option value="agent">Агент</option>
+                            <option value="owner">Собственник</option>
+                        </select>
+                        <span class="form__error"></span>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label for="maxPrice">Максимальная цена</label>
+                            <div class="form__input-prefix">
+                                <span class="form__input-prefix-symbol">$</span>
+                                <input id="maxPrice" name="maxPrice" type="number" min="0" step="1000"
+                                    placeholder="90000" required />
+                            </div>
+                            <span class="form__error"></span>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="minSize">Минимальная площадь (м²)</label>
+                            <input id="minSize" name="minSize" type="number" min="0" step="10" placeholder="20"
+                                required />
+                            <span class="form__error"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="form__submit">Отправить заявку</button>
+                    <p class="form__status" id="formStatus" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="inquiry__image">
+                <img src="../src/assets/images/h72.jpg.jpg" alt="Интерьер квартиры" />
+            </div>
+        </section>
+        </div>
+
+        <section class="otzyv container" data-aos="fade-up">
+            <div class="otzyv__inner">
+                <header class="otzyv__header">
+                    <h2 class="otzyv__title">Клиенты любят жить с Homez</h2>
+                    <p class="otzyv__subtitle">Реальные отзывы людей, которые уже нашли свой дом мечты</p>
+                </header>
+
+                <div class="swiper reviewsSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <h3 class="review-card__title">Отличная работа</h3>
+                                <p class="review-card__text">«С помощью Homez мы быстро подобрали квартиру в новом
+                                    районе. Менеджер сопровождал нас на всех этапах сделки и помог с оформлением
+                                    документов.»</p>
+                                <div class="review-card__rating">
+                                    <span>★★★★★</span>
+                                </div>
+                                <footer class="review-card__footer">
+                                    <div class="review-card__avatar review-card__avatar--1"></div>
+                                    <div class="review-card__author">
+                                        <p class="review-card__name">Али Туфан</p>
+                                        <p class="review-card__role">Маркетолог</p>
+                                    </div>
+                                </footer>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <h3 class="review-card__title">Профессиональный подход</h3>
+                                <p class="review-card__text">«Агенты внимательно выслушали наши пожелания и предложили
+                                    несколько вариантов в нужном бюджете. В итоге мы нашли идеальный дом за одну
+                                    неделю.»</p>
+                                <div class="review-card__rating">
+                                    <span>★★★★★</span>
+                                </div>
+                                <footer class="review-card__footer">
+                                    <div class="review-card__avatar review-card__avatar--2"></div>
+                                    <div class="review-card__author">
+                                        <p class="review-card__name">Альберт Флорес</p>
+                                        <p class="review-card__role">Дизайнер</p>
+                                    </div>
+                                </footer>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <h3 class="review-card__title">Идеальный сервис</h3>
+                                <p class="review-card__text">«Понравилось, что все объекты подробно описаны, есть
+                                    качественные фотографии и честная информация. Сервис экономит время и нервы.»</p>
+                                <div class="review-card__rating">
+                                    <span>★★★★★</span>
+                                </div>
+                                <footer class="review-card__footer">
+                                    <div class="review-card__avatar review-card__avatar--3"></div>
+                                    <div class="review-card__author">
+                                        <p class="review-card__name">Роберт Фокс</p>
+                                        <p class="review-card__role">Разработчик</p>
+                                    </div>
+                                </footer>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article class="review-card">
+                                <h3 class="review-card__title">Надёжный партнёр</h3>
+                                <p class="review-card__text">«С Homez мы уже несколько раз сдавали и покупали
+                                    недвижимость. Всегда прозрачные условия, грамотные консультации и быстрая
+                                    обратная связь.»</p>
+                                <div class="review-card__rating">
+                                    <span>★★★★☆</span>
+                                </div>
+                                <footer class="review-card__footer">
+                                    <div class="review-card__avatar review-card__avatar--4"></div>
+                                    <div class="review-card__author">
+                                        <p class="review-card__name">Марвин МакКинни</p>
+                                        <p class="review-card__role">Предприниматель</p>
+                                    </div>
+                                </footer>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination reviews-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="plans container" data-aos="fade-up">
+            <div class="plans__inner">
+                <header class="plans__header">
+                    <h2 class="plans__title">Тарифные планы</h2>
+                    <p class="plans__subtitle">Выберите удобный формат размещения объявлений под ваши задачи</p>
+                </header>
+
+                <div class="plans__grid">
+                    <article class="plan-card">
+                        <h3 class="plan-card__name">Профессиональный</h3>
+                        <p class="plan-card__price">$599.00</p>
+                        <p class="plan-card__desc">Пакет для активных продавцов и агентств, действует 60 дней.</p>
+                        <ul class="plan-card__list">
+                            <li>Все типы объявлений</li>
+                            <li>До 20 объектов</li>
+                            <li>Доступ 60 дней</li>
+                            <li>Выделение избранных объектов</li>
+                            <li>Поддержка 24/7</li>
+                        </ul>
+                        <button class="plan-card__button" type="button">Добавить в корзину</button>
+                    </article>
+
+                    <article class="plan-card plan-card--featured">
+                        <h3 class="plan-card__name">Бизнес</h3>
+                        <p class="plan-card__price">$999.00</p>
+                        <p class="plan-card__desc">Расширенный тариф для агентств и застройщиков, действует 90 дней.</p>
+                        <ul class="plan-card__list">
+                            <li>Все типы объявлений</li>
+                            <li>До 30 объектов</li>
+                            <li>Доступ 90 дней</li>
+                            <li>Выделение премиум‑объектов</li>
+                            <li>Приоритетная поддержка 24/7</li>
+                        </ul>
+                        <button class="plan-card__button plan-card__button--primary" type="button">Добавить в корзину</button>
+                    </article>
+
+                    <article class="plan-card">
+                        <h3 class="plan-card__name">Базовый</h3>
+                        <p class="plan-card__price plan-card__price--free">Бесплатно</p>
+                        <p class="plan-card__desc">Стартовый тариф для частных объявлений, действует 30 дней.</p>
+                        <ul class="plan-card__list">
+                            <li>Все типы объявлений</li>
+                            <li>До 10 объектов</li>
+                            <li>Доступ 30 дней</li>
+                            <li>Выделение избранных объектов</li>
+                            <li>Поддержка 24/7</li>
+                        </ul>
+                        <button class="plan-card__button" type="button">Добавить в корзину</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__info">
+                <h2 class="footer__title">Нужна консультация по недвижимости?</h2>
+                <p class="footer__subtitle">
+                    Оставьте заявку, и мы подберём для вас актуальные объекты и свяжемся в удобное время.
+                </p>
+
+                <form id="footerForm" class="footer-form" novalidate>
+                    <div class="form__group">
+                        <label for="footerName">Ваше имя</label>
+                        <input id="footerName" name="footerName" type="text" placeholder="Иван Иванов" required>
+                        <span class="form__error"></span>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="footerEmail">Электронная почта</label>
+                        <input id="footerEmail" name="footerEmail" type="email" placeholder="example@gmail.com" required>
+                        <span class="form__error"></span>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="footerMessage">Комментарий</label>
+                        <textarea id="footerMessage" name="footerMessage" placeholder="Кратко опишите задачу" required></textarea>
+                        <span class="form__error"></span>
+                    </div>
+
+                    <button type="submit" class="form__submit footer-form__submit">Отправить заявку</button>
+                    <p class="footer-form__status" id="footerFormStatus" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="footer__map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3847.0777114336847!2d47.20806843895211!3d56.15077936390878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1770750457105!5m2!1sru!2sru"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Карта"></iframe>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container footer__bottom-inner">
+                <p>© 2026 Homez. Все права защищены.</p>
+                <div class="footer__bottom-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" type="button" aria-label="Вернуться наверх">
+        <img class="scroll-top__icon" src="../src/assets/icons/str.svg" alt="Наверх">
+    </button>
+
+    <!-- Сторонние библиотеки -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Наши файлы -->
+    <script src="../src/components/Slider/Slider.js"></script>
+    <script src="../src/components/Reviews/ReviewsSlider.js"></script>
+    <script src="../src/components/Form/Form.js"></script>
+    <script src="../src/components/Menu/MenuHero.js"></script>
+    <script src="../src/components/ScrollTop/ScrollTop.js"></script>
+    <script src="../src/components/NewsletterFlyout/NewsletterFlyout.js"></script>
+
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+    <!-- https://www.figma.com/design/kf5ToB5kXfXZDL8sW4JRRj/75--Real-Estate-Landing-website-templates--Community---Copy-?node-id=6108-1203&t=zEZv5JLPkeBrJzx9-0 -->
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Категории — Homez</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward_ios,tune" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+  <!-- Общие стили проекта -->
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="../src/styles/Sys.css">
+  <link rel="stylesheet" href="../src/components/Slider/Slider.css">
+  <link rel="stylesheet" href="../src/components/Menu/MenuHero.css">
+  <link rel="stylesheet" href="../src/components/Categories/Categories.css">
+  <link rel="stylesheet" href="../src/components/Footer/Footer.css">
+  <link rel="stylesheet" href="../src/styles/_reset.css">
+</head>
+
+<body>
+  <header class="header categories-header">
+    <div class="header-content">
+      <img src="../src/assets/icons/logo.svg" alt="Логотип (homez)" class="logo">
+
+      <ul class="header-link_slk">
+        <li><a class="header-link" href="./index.html">Главная</a></li>
+        <li><a class="header-link" href="./services.html">Услуги</a></li>
+      </ul>
+
+      <div class="header-info">
+        <a class="phone" href="tel:+880123456789"><img class="svg-icon-header" src="../src/assets/icons/phone.svg" alt="">+(088) 123 456 789</a>
+        <div class="reg"><img class="svg-icon-header" src="../src/assets/icons/profile.svg" alt="Профиль">Вход /
+          Регистрация</div>
+      </div>    
+    </div>
+  </header>
+  <p class="slk-str container">
+    <a href="index.html">Главная</a>
+    <span class="material-symbols-outlined">
+    arrow_forward_ios
+</span>
+Категории
+</p>
+
+<main>
+    <section class="categories-hero container">
+      <div class="menu-hero__content">
+        <h1 class="menu-hero__title">
+          Категории недвижимости
+        </h1>
+        <p class="menu-hero__subtitle">
+          Настройте фильтр и сразу увидите подходящие объекты на карте и в подборках ниже.
+        </p>
+      </div>
+    </section>
+
+    <section class="categories-layout container">
+      <div class="categories-layout__left">
+        <div class="categories-layout__header">
+          <div class="categories-layout__text">
+            <h2 class="categories-layout__title">Фильтр объектов</h2>
+            <p class="categories-layout__subtitle">
+              Подберите тип недвижимости, бюджет и дополнительные параметры — мы сузим список объектов.
+            </p>
+          </div>
+        </div>
+
+        <aside class="categories-filter">
+          <form class="categories-filter__form" autocomplete="off">
+            <div class="categories-filter__row">
+              <div class="categories-filter__group">
+                <label class="categories-filter__label" for="filterType">Тип недвижимости</label>
+                <select id="filterType" name="type" class="categories-filter__control" data-instant-filter>
+                  <option value="">Любой</option>
+                  <option value="apartment">Квартира</option>
+                  <option value="house">Дом / Коттедж</option>
+                  <option value="townhouse">Таунхаус</option>
+                  <option value="villa">Вилла</option>
+                </select>
+              </div>
+
+              <div class="categories-filter__group categories-filter__group--range">
+                <span class="categories-filter__label">Бюджет, $</span>
+                <div class="categories-filter__range">
+                  <input class="categories-filter__control" type="number" inputmode="numeric" name="priceMin" placeholder="от" data-instant-filter>
+                  <span class="categories-filter__range-sep">—</span>
+                  <input class="categories-filter__control" type="number" inputmode="numeric" name="priceMax" placeholder="до" data-instant-filter>
+                </div>
+                <p class="categories-filter__hint" data-filter-hint="budget"></p>
+              </div>
+            </div>
+
+            <div class="categories-filter__row">
+              <div class="categories-filter__group categories-filter__group--range">
+                <label class="categories-filter__label">Площадь, м²</label>
+                <div class="categories-filter__range">
+                  <input class="categories-filter__control" type="number" inputmode="numeric" name="areaMin" placeholder="от" data-instant-filter>
+                  <span class="categories-filter__range-sep">—</span>
+                  <input class="categories-filter__control" type="number" inputmode="numeric" name="areaMax" placeholder="до" data-instant-filter>
+                </div>
+              </div>
+
+              <fieldset class="categories-filter__group categories-filter__group--rooms">
+                <legend class="categories-filter__label">Комнаты</legend>
+                <div class="categories-filter__chips">
+                  <label class="categories-filter__chip">
+                    <input type="radio" name="rooms" value="" data-instant-filter checked>
+                    <span>Любые</span>
+                  </label>
+                  <label class="categories-filter__chip">
+                    <input type="radio" name="rooms" value="studio" data-instant-filter>
+                    <span>Студия</span>
+                  </label>
+                  <label class="categories-filter__chip">
+                    <input type="radio" name="rooms" value="1-2" data-instant-filter>
+                    <span>1–2</span>
+                  </label>
+                  <label class="categories-filter__chip">
+                    <input type="radio" name="rooms" value="3plus" data-instant-filter>
+                    <span>3+</span>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="categories-filter__row">
+              <div class="categories-filter__group">
+                <label class="categories-filter__label" for="filterLease">Длительность аренды</label>
+                <select id="filterLease" name="lease" class="categories-filter__control" data-instant-filter>
+                  <option value="">Любая</option>
+                  <option value="short">Краткосрочная</option>
+                  <option value="long">Долгосрочная</option>
+                  <option value="contract">По контракту</option>
+                </select>
+              </div>
+
+              <div class="categories-filter__group">
+                <label class="categories-filter__label">Доступность</label>
+                <div class="categories-filter__chips">
+                  <label class="categories-filter__chip">
+                    <input type="radio" name="available" value="" data-instant-filter checked>
+                    <span>Неважно</span>
+                  </label>
+                  <label class="categories-filter__chip">
+                    <input type="radio" name="available" value="today" data-instant-filter>
+                    <span>Сегодня</span>
+                  </label>
+                  <label class="categories-filter__chip">
+                    <input type="radio" name="available" value="week" data-instant-filter>
+                    <span>До недели</span>
+                  </label>
+                  <label class="categories-filter__chip">
+                    <input type="radio" name="available" value="month" data-instant-filter>
+                    <span>До месяца</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="categories-filter__row categories-filter__row--compact">
+              <label class="categories-filter__checkbox">
+                <input type="checkbox" name="comfortZone" value="1" data-instant-filter>
+                <span>Только в “зоне комфорта”</span>
+              </label>
+              <label class="categories-filter__checkbox">
+                <input type="checkbox" name="richMedia" value="1" data-instant-filter>
+                <span>Только с фото / видео</span>
+              </label>
+            </div>
+
+            <details class="categories-filter__advanced">
+              <summary>Доп параметры</summary>
+              <div class="categories-filter__advanced-grid">
+                <div class="categories-filter__group">
+                  <label class="categories-filter__label" for="filterEnergy">Энергоэффективность</label>
+                  <select id="filterEnergy" name="energy" class="categories-filter__control" data-instant-filter>
+                    <option value="">Любая</option>
+                    <option value="a">A</option>
+                    <option value="b">B</option>
+                    <option value="c">C</option>
+                  </select>
+                </div>
+
+                <div class="categories-filter__group">
+                  <label class="categories-filter__label" for="filterEco">Экологический индекс</label>
+                  <select id="filterEco" name="eco" class="categories-filter__control" data-instant-filter>
+                    <option value="">Любой</option>
+                    <option value="high">Высокий</option>
+                    <option value="medium">Средний</option>
+                    <option value="low">Низкий</option>
+                  </select>
+                </div>
+
+                <div class="categories-filter__group">
+                  <label class="categories-filter__label" for="filterNoise">Уровень шума</label>
+                  <select id="filterNoise" name="noise" class="categories-filter__control" data-instant-filter>
+                    <option value="">Любой</option>
+                    <option value="low">Низкий</option>
+                    <option value="medium">Средний</option>
+                    <option value="high">Высокий</option>
+                  </select>
+                </div>
+
+                <div class="categories-filter__group">
+                  <label class="categories-filter__label" for="filterSafety">Уровень безопасности</label>
+                  <select id="filterSafety" name="safety" class="categories-filter__control" data-instant-filter>
+                    <option value="">Любой</option>
+                    <option value="high">Высокий</option>
+                    <option value="medium">Средний</option>
+                    <option value="low">Низкий</option>
+                  </select>
+                </div>
+              </div>
+            </details>
+
+            <div class="categories-filter__footer">
+              <button class="categories-filter__reset" type="button" data-filter-reset>Сбросить фильтры</button>
+            </div>
+          </form>
+        </aside>
+      </div>
+
+      <div class="categories-layout__map">
+        <div class="categories-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24130.117788198655!2d-73.9992555!3d40.7306101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQzJzQ5LjIiTiA3M8KwMDAnMDAuMCJX!5e0!3m2!1sru!2sru!4v1700000000000!5m2!1sru!2sru"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Карта"></iframe>
+
+          <!-- <span class="categories-map__pin" style="top: 34%; left: 38%;"></span>
+          <span class="categories-map__pin" style="top: 48%; left: 54%;"></span>
+          <span class="categories-map__pin" style="top: 62%; left: 30%;"></span>
+          <span class="categories-map__pin" style="top: 70%; left: 64%;"></span>
+          <span class="categories-map__pin" style="top: 40%; left: 70%;"></span> -->
+        </div>
+
+        <!-- <div class="categories-map__legend">
+          <span class="categories-map__dot"></span>
+          <span>Примерные точки объектов на карте Google</span>
+        </div> -->
+      </div>
+    </section>
+
+    <section class="categories-grid container">
+      <header class="categories-grid__header">
+        <h2>Подборки по районам</h2>
+        <p>Собрали самые востребованные районы города с удобным доступом к транспорту и инфраструктуре.</p>
+      </header>
+
+      <div class="categories-grid__cards">
+        <article class="categories-grid-card">
+          <div class="categories-grid-card__image categories-grid-card__image--1"></div>
+          <div class="categories-grid-card__body">
+            <h3>Исторический центр</h3>
+            <p>Квартиры в старинных домах с высокими потолками и живой атмосферой города.</p>
+          </div>
+        </article>
+
+        <article class="categories-grid-card">
+          <div class="categories-grid-card__image categories-grid-card__image--2"></div>
+          <div class="categories-grid-card__body">
+            <h3>Деловой квартал</h3>
+            <p>Современные апартаменты рядом с бизнес-центрами и коворкингами.</p>
+          </div>
+        </article>
+
+        <article class="categories-grid-card">
+          <div class="categories-grid-card__image categories-grid-card__image--3"></div>
+          <div class="categories-grid-card__body">
+            <h3>Район парков</h3>
+            <p>Семейные дома и таунхаусы в зелёных кварталах с прогулочными зонами.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="categories-featured container">
+      <header class="categories-featured__header">
+        <h2>Рекомендованные объекты</h2>
+        <p>Несколько вариантов, которые чаще всего выбирают пользователи в этом месяце.</p>
+      </header>
+
+      <div class="categories-featured__list">
+        <article
+          class="categories-featured-card"
+          data-filter-item
+          data-type="apartment"
+          data-price-min="3200"
+          data-price-max="4200"
+          data-rooms-min="3"
+          data-rooms-max="4"
+          data-area-min="110"
+          data-area-max="160"
+          data-floor-min="12"
+          data-floor-max="20"
+          data-floors="22"
+          data-infra="parking,security,concierge"
+          data-condition="fresh"
+          data-energy="b"
+          data-eco="medium"
+          data-noise="medium"
+          data-safety="high"
+          data-lease="long"
+          data-available="month"
+          data-media="photo,video,virtual"
+          data-comfort="true"
+        >
+          <div class="categories-featured-card__image categories-featured-card__image--1"></div>
+          <div class="categories-featured-card__body">
+            <h3>Пентхаус с террасой</h3>
+            <p>3 спальни · 2 ванные · панорамный вид на город.</p>
+          </div>
+        </article>
+
+        <article
+          class="categories-featured-card"
+          data-filter-item
+          data-type="house"
+          data-price-min="2400"
+          data-price-max="3200"
+          data-rooms-min="4"
+          data-rooms-max="5"
+          data-area-min="140"
+          data-area-max="220"
+          data-floor-min="1"
+          data-floor-max="2"
+          data-floors="2"
+          data-infra="parking,playground,security"
+          data-condition="cosmetic"
+          data-energy="c"
+          data-eco="high"
+          data-noise="low"
+          data-safety="high"
+          data-lease="contract"
+          data-available="week"
+          data-media="photo"
+          data-comfort="true"
+        >
+          <div class="categories-featured-card__image categories-featured-card__image--2"></div>
+          <div class="categories-featured-card__body">
+            <h3>Семейный дом у парка</h3>
+            <p>4 спальни · гараж · большая гостиная с камином.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__info">
+        <h2 class="footer__title">Нужна консультация по недвижимости?</h2>
+        <p class="footer__subtitle">Оставьте заявку, и мы подберём для вас актуальные объекты и свяжемся в удобное время.</p>
+        <form id="footerForm" class="footer-form" novalidate>
+          <div class="form__group">
+            <label for="footerName">Ваше имя</label>
+            <input id="footerName" name="footerName" type="text" placeholder="Иван Иванов" required>
+            <span class="form__error"></span>
+          </div>
+          <div class="form__group">
+            <label for="footerEmail">Электронная почта</label>
+            <input id="footerEmail" name="footerEmail" type="email" placeholder="example@gmail.com" required>
+            <span class="form__error"></span>
+          </div>
+          <div class="form__group">
+            <label for="footerMessage">Комментарий</label>
+            <textarea id="footerMessage" name="footerMessage" placeholder="Кратко опишите задачу" required></textarea>
+            <span class="form__error"></span>
+          </div>
+          <button type="submit" class="form__submit footer-form__submit">Отправить заявку</button>
+          <p class="footer-form__status" id="footerFormStatus" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="footer__map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3847.0777114336847!2d47.20806843895211!3d56.15077936390878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1770750457105!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Карта"></iframe>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2026 Homez. Все права защищены.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Условия использования</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="../src/components/Form/Form.js"></script>
+</body>
+
+</html>
+
